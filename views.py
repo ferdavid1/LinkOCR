@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from django.http import HttpResponse
-from crnn_main import main
+from demo import main
 
 def open(request):
 
@@ -8,5 +8,3 @@ def open(request):
 	html = "<html><body><a href={}/></body></html>".format(site)
 
 	return HttpResponse(html)
-
-open()

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<div>
+<img src="linkocr/logo.png" width="700px" height="400px" />
+</div>
+</head>
+
+<body>
+<div>
+<p>Upload image: 
+	<input type="file" name="datafile" size="40">
+</p>
+</div>
+<div>
+	<form action= '{% url linkocr/view.py %}' method="POST">
+      <input type="submit" value="Visit Link" id="submit" />
+  </form>
+</div>
+
+</body>
