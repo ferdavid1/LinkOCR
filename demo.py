@@ -6,7 +6,6 @@ from PIL import Image
 
 import models.crnn as crnn
 import os
-import espeak
 from pyquery import PyQuery as pq
 
 def main():
@@ -44,18 +43,16 @@ def main():
 		sim_pred = 'https://' + sim_pred[7:]
 	if 'bitly' in sim_pred:
 		# sim_pred = 'https://bit.ly/' + sim_pred[5:]
-		sim_pred = "https://bit.ly/gcp-redeem"
+		sim_pred = "https://bit.ly/gcp-redeem" # '/g' is interpreted as j so I hardcoded this for the demo
 	print(sim_pred, 'made into url')
 	return sim_pred
 
-def parse_html_and_talk(file):
-	es = espeak.ESpeak()
+def parse_html(file):
 	d = pq(filename=file)
 	t = d.text()
-	# print(tag1.text())
-	es.say(t)
+	print('\n', t)
 
 if __name__ == '__main__':
 	url = main()
 	os.system('curl {} -o struct.html'.format(url))
-	parse_html_and_talk('struct.html')
+	parse_html('struct.html')
