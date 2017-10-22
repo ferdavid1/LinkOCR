@@ -14,9 +14,8 @@
 </p>
 </div>
 <div>
-	<form action= '{% url linkocr/view.py %}' method="POST">
-      <input type="submit" value="Visit Link" id="submit" />
-  </form>
+	{% block content %}
+	{% endblock %}
 </div>
 
 </body>
