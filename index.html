@@ -3,7 +3,7 @@
 
 <head>
 <div>
-<img src="linkocr/logo.png" width="700px" height="400px" />
+<img src="logo.png" width="700px" height="400px" />
 </div>
 </head>
 
@@ -14,8 +14,34 @@
 </p>
 </div>
 <div>
-	{% block content %}
-	{% endblock %}
+<script language="Javascript">
+function my_ajax_call() {
+var data = 'var1=value&var2=value2&var3=value3';
+
+$.ajax({
+            type: "POST", //can be POST or GET
+            url: "ex.php",
+            dataType: "html", //or json
+            data: data, //data to send as $_POST to script
+            success: function(response) {
+
+                //Once data received, do this
+                alert(response);
+
+            },
+
+            error: function(response) {
+
+
+            }
+
+        }); 
+
+
+}
+</script>
+<button onclick='my_ajax_call()'>CALL AJAX</button>
 </div>
+
 
 </body>
