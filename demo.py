@@ -5,6 +5,7 @@ import dataset
 from PIL import Image
 
 import models.crnn as crnn
+import webbrowser
 
 
 def main():
@@ -46,4 +47,5 @@ def main():
 	return sim_pred
 
 if __name__ == '__main__':
-	main()
+	url = main()
+	webbrowser.open(url)
